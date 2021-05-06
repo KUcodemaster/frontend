@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
+h1 {
+  padding-left: 150px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  margin-top: 0px;
+  padding-bottom: 10px;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 30pt;
+  color: #3498db;
+}
+
+html {
+  background-image: url("background.jpg");
+  background-size: auto;
+}
+
+.todo {
+  border: 4px solid pink;
+  width: 1fr;
+  max-width: 620px;
+  margin-left: 25%;
+  margin-right: 12%;
+  margin-bottom: 100px;
+  padding-left: 10px;
+}
+.nametag {
+  text-align: center;
+  font-size: 24pt;
+  font-family: Fantasy, "Copperplate";
+}
+.list {
+  margin-top: 20px;
+  padding-right: 10px;
+  width: 25px;
+  height: 25px;
+}
+.todo li {
+  font-size: 20px;
+  font-family: "NanumBarunGothic", "serif";
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.js-clock {
+  width: 120px;
+  text-align: right;
+  padding-top: 32px;
+  font-size: 9pt;
+  float: right;
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+input {
+  font-family: "NanumBarunGothic", "serif";
+  width: 98%;
+  border: 0;
+  border-bottom: 2px solid pink;
+  outline: 0;
+  font-size: 1rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+input::placeholder {
+  color: black;
+}
+
+button {
+  background-color: white;
+  border: 1.5px solid black;
+  color: white;
+  padding: 3px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
