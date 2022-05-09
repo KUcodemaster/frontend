@@ -5,7 +5,6 @@ h1 {
   border-bottom: 1px solid black;
   margin-top: 0px;
   padding-bottom: 10px;
-  color: black;
   font-family: "Poppins", sans-serif;
   font-size: 30pt;
   color: #3498db;
@@ -63,17 +62,10 @@ input {
   color: black;
   padding: 7px 0;
   background: transparent;
-  transition: border-color 0.2s;
+}
 
-  &::placeholder {
-    color: transparent;
-  }
-
-  &:placeholder-shown ~ .form__label {
-    font-size: 1rem;
-    cursor: text;
-    top: 20px;
-  }
+li > input {
+  width: 80%;
 }
 
 input::placeholder {
@@ -82,9 +74,11 @@ input::placeholder {
 
 button {
   background-color: white;
-  border: 1.5px solid black;
-  color: white;
+  border: 1px solid black;
+  color: #36AE7C;
+  font-weight: 900;
   padding: 3px 3px;
+  width: 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;

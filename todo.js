@@ -23,6 +23,35 @@ function saveToDos() {
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }
 
+function editToDo(event) {
+  const btn = event.target;
+  const newBtn = document.createElement('button');
+  const li = btn.parentNode;
+  const text = li.firstChild.innerHTML;
+  const input = document.createElement('input');
+
+  newBtn.innerText = '✔';
+  newBtn.addEventListener('click', function () {
+    const newSpan = document.createElement('span');
+    newSpan.innerText = input.value;
+    li.replaceChild(newSpan, input);
+    li.replaceChild(btn, newBtn);
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      const newSpan = document.createElement('span');
+      newSpan.innerText = input.value;
+      li.replaceChild(newSpan, input);
+      li.replaceChild(btn, newBtn);
+    }
+  });
+  li.replaceChild(newBtn, btn);
+  input.setAttribute('value', text);
+  li.replaceChild(input, li.firstChild);
+  
+  saveToDos();
+}
+
 
 function loadToDos() {
     const loadedToDos = localStorage.getItem(TODOS_LS);
@@ -37,12 +66,16 @@ function loadToDos() {
 function paintToDo(text) {
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
+    const editBtn = document.createElement("button");
     const newId = toDos.length + 1; 
     const span = document.createElement("span");
+    editBtn.innerHTML = "⛏";
     delBtn.innerHTML = "❌";
     delBtn.addEventListener("click", deleteToDo);
+    editBtn.addEventListener("click", editToDo);
     span.innerText = text;
     li.appendChild(span);
+    li.appendChild(editBtn);
     li.appendChild(delBtn);
     li.id = newId; 
     toDoList.appendChild(li);
